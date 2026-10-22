@@ -1,6 +1,6 @@
 // Portfolio — Rayan Ouriemi
-// Petites interactions : menu mobile, carte des compétences, démo des portes logiques,
-// et repli de l'animation au scroll pour les navigateurs sans `animation-timeline`.
+// Petites interactions : menu mobile, carte des compétences, copie de l'email,
+// filtre des projets, et repli de l'animation au scroll pour les navigateurs sans `animation-timeline`.
 
 (function () {
   'use strict';
@@ -22,13 +22,14 @@
 
   // ---- Carte des compétences --------------------------------------------
   var SKILLS = {
-    java: { ref: 'JV-17', name: 'Java', kind: 'Langage orienté objet', desc: 'Conception orientée objet, architecture MVC, interfaces JavaFX et tests unitaires. Mon langage de référence pour structurer un logiciel proprement.', used: 'Orbit Logic, projets de cours', since: 'Depuis 2022', tags: ['POO', 'JavaFX', 'JUnit', 'Maven'], wave: 'M0 28 L40 28 L40 10 L100 10 L100 46 L160 46 L160 10 L220 10 L220 46 L280 46 L280 28 L300 28' },
-    c: { ref: 'CX-23', name: 'C / C++', kind: 'Bas niveau & embarqué', desc: 'Programmation de microcontrôleurs, gestion fine de la mémoire, interruptions et contraintes temps réel. Là où le logiciel touche le matériel.', used: 'Sentinelle Air, Hashline', since: 'Depuis 2021', tags: ['ESP32', 'FreeRTOS', 'libpcap', 'Make'], wave: 'M0 28 L20 28 L20 8 L35 8 L35 48 L50 48 L50 8 L65 8 L65 48 L80 48 L80 8 L95 8 L95 48 L110 48 L110 28 L300 28' },
-    js: { ref: 'JS-ES', name: 'JavaScript', kind: 'Web & temps réel', desc: 'Applications web interactives, API REST et communication temps réel. Côté client avec React, côté serveur avec Node.js.', used: 'Campus Flow', since: 'Depuis 2022', tags: ['React', 'Node.js', 'TypeScript', 'WebSocket'], wave: 'M0 28 C25 4 50 4 75 28 S125 52 150 28 S200 4 225 28 S275 52 300 28' },
-    web: { ref: 'HC-05', name: 'HTML / CSS', kind: 'Interfaces', desc: 'Intégration soignée, responsive et accessible. Une interface doit être aussi rigoureuse que le code qu’elle expose.', used: 'Campus Flow, ce portfolio', since: 'Depuis 2020', tags: ['Sémantique', 'Responsive', 'Accessibilité', 'Animations'], wave: 'M0 46 L60 46 L60 10 L240 10 L240 46 L300 46' },
-    git: { ref: 'GT-02', name: 'Git', kind: 'Versionnage', desc: 'Branches, revues de code et historique propre. Utilisé sur tous mes projets, seul comme en équipe.', used: 'Tous les projets', since: 'Depuis 2021', tags: ['Branches', 'Pull requests', 'CI', 'Conventional commits'], wave: 'M0 28 L50 28 L60 10 L70 46 L80 28 L150 28 L160 10 L170 46 L180 28 L250 28 L260 10 L270 46 L280 28 L300 28' },
-    linux: { ref: 'LX-64', name: 'Linux', kind: 'Systèmes & réseau', desc: 'Administration de base, scripts Bash, services réseau et environnements de test isolés pour l’analyse de sécurité.', used: 'Hashline, lab de VM', since: 'Depuis 2022', tags: ['Bash', 'SSH', 'systemd', 'iptables'], wave: 'M0 28 L30 28 L45 6 L60 50 L75 28 L120 28 L135 6 L150 50 L165 28 L210 28 L225 6 L240 50 L255 28 L300 28' },
-    elec: { ref: 'EL-PCB', name: 'Électronique', kind: 'Matériel', desc: 'Schématique et routage de PCB, choix de composants, mesures à l’oscilloscope et soudure CMS. Du prototype à la carte fonctionnelle.', used: 'Sentinelle Air', since: 'Depuis 2021', tags: ['KiCad', 'Oscilloscope', 'Capteurs', 'Soudure CMS'], wave: 'M0 46 C40 46 40 10 80 10 C120 10 120 46 160 46 C200 46 200 10 240 10 C280 10 280 46 300 46' }
+    vue: { ref: 'VU-03', name: 'Vue / Nuxt', kind: 'Framework principal', desc: 'Mon terrain de jeu quotidien : composants réactifs, rendu serveur, routes API et SEO. Hexaconnect et mon portfolio principal tournent dessus.', used: 'Hexaconnect, rayanouriemi.fr', lvl: 90, tags: ['Composition API', 'Pinia', 'SSR', 'Nitro'], wave: 'M0 28 C25 4 50 4 75 28 S125 52 150 28 S200 4 225 28 S275 52 300 28' },
+    react: { ref: 'RX-18', name: 'React / Next', kind: 'Interfaces', desc: 'Composants, hooks et rendu hybride avec Next.js. L’autre grand écosystème front que je pratique en freelance.', used: 'Projets freelance', lvl: 85, tags: ['Hooks', 'App Router', 'Server Components'], wave: 'M0 28 L40 28 L40 10 L100 10 L100 46 L160 46 L160 10 L220 10 L220 46 L280 46 L280 28 L300 28' },
+    ts: { ref: 'TS-05', name: 'TypeScript', kind: 'Typage & robustesse', desc: 'Des types qui documentent le code et attrapent les erreurs avant la prod. Indispensable dès qu’un projet grandit ou se partage.', used: 'Hexaconnect, outils internes', lvl: 80, tags: ['Generics', 'Zod', 'Types stricts'], wave: 'M0 28 L50 28 L60 10 L70 46 L80 28 L150 28 L160 10 L170 46 L180 28 L250 28 L260 10 L270 46 L280 28 L300 28' },
+    css: { ref: 'TW-04', name: 'Tailwind / CSS', kind: 'Design & animations', desc: 'Intégration au pixel près, responsive et accessible. Animations CSS, SVG et GSAP pour des interfaces qui ont du caractère.', used: 'Kōji Coffee, Maison Brume, Kalm', lvl: 92, tags: ['Tailwind', 'Animations', 'SVG', 'GSAP'], wave: 'M0 46 L60 46 L60 10 L240 10 L240 46 L300 46' },
+    node: { ref: 'ND-22', name: 'Node / API', kind: 'Back-end', desc: 'API REST, authentification, bases de données. Le côté serveur qui fait tourner les interfaces, avec Supabase, Prisma et SQL.', used: 'Hexaconnect', lvl: 70, tags: ['REST', 'Supabase', 'Prisma', 'SQL'], wave: 'M0 28 L30 28 L45 6 L60 50 L75 28 L120 28 L135 6 L150 50 L165 28 L210 28 L225 6 L240 50 L255 28 L300 28' },
+    c: { ref: 'CX-23', name: 'C / C++', kind: 'Bas niveau & embarqué', desc: 'Héritage du DUT GEII : microcontrôleurs, systèmes embarqués et automatisme. Une compréhension des systèmes qui se ressent dans chaque ligne de code.', used: 'DUT GEII', lvl: 72, tags: ['Embarqué', 'Automatisme', 'Microcontrôleurs'], wave: 'M0 28 L20 28 L20 8 L35 8 L35 48 L50 48 L50 8 L65 8 L65 48 L80 48 L80 8 L95 8 L95 48 L110 48 L110 28 L300 28' },
+    figma: { ref: 'FG-01', name: 'Figma', kind: 'UI / UX', desc: 'Maquettes, prototypes et design systems avant la première ligne de code. Penser l’expérience avant de l’implémenter.', used: 'Pulse, Flowstate, Atoms', lvl: 75, tags: ['Maquettes', 'Prototypes', 'Design system'], wave: 'M0 46 C40 46 40 10 80 10 C120 10 120 46 160 46 C200 46 200 10 240 10 C280 10 280 46 300 46' },
+    git: { ref: 'GT-02', name: 'Git', kind: 'Versionnage', desc: 'Branches, revues de code et historique propre. Sur tous mes projets, seul comme en équipe, avec déploiement continu sur Vercel.', used: 'Tous les projets', lvl: 88, tags: ['GitHub', 'Pull requests', 'Vercel', 'CI'], wave: 'M0 28 L50 28 L60 10 L70 46 L80 28 L150 28 L160 10 L170 46 L180 28 L250 28 L260 10 L270 46 L280 28 L300 28' }
   };
 
   var chips = document.querySelectorAll('.chip[data-skill]');
@@ -47,7 +48,8 @@
       setText('sheet-kind', s.kind);
       setText('sheet-desc', s.desc);
       setText('sheet-used', s.used);
-      setText('sheet-since', s.since);
+      setText('sheet-lvl', s.lvl + '%');
+      document.getElementById('sheet-bar').style.width = s.lvl + '%';
       document.getElementById('sheet-wave').setAttribute('d', s.wave);
       var tags = document.getElementById('sheet-tags');
       tags.textContent = '';
@@ -63,35 +65,42 @@
     });
   }
 
-  // ---- Démo des portes logiques (Orbit Logic) ---------------------------
-  var inputs = { a: true, b: false };
-  var switches = document.querySelectorAll('.sw[data-input]');
-  if (switches.length) {
-    var gates = {
-      and: function (a, b) { return a && b; },
-      or: function (a, b) { return a || b; },
-      xor: function (a, b) { return a !== b; }
-    };
-    var render = function () {
-      switches.forEach(function (sw) {
-        var on = inputs[sw.dataset.input];
-        sw.classList.toggle('sw-on', on);
-        sw.setAttribute('aria-pressed', String(on));
-        sw.querySelector('[data-val]').textContent = on ? '1' : '0';
-      });
-      document.querySelectorAll('.gate[data-gate]').forEach(function (g) {
-        var out = gates[g.dataset.gate](inputs.a, inputs.b);
-        g.classList.toggle('gate-on', out);
-        g.querySelector('[data-out]').textContent = out ? '1' : '0';
-      });
-    };
-    switches.forEach(function (sw) {
-      sw.addEventListener('click', function () {
-        inputs[sw.dataset.input] = !inputs[sw.dataset.input];
-        render();
+  // ---- Copier l'email -------------------------------------------------
+  document.querySelectorAll('.copy[data-copy]').forEach(function (btn) {
+    var label = btn.querySelector('.copy-lbl');
+    btn.addEventListener('click', function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(btn.dataset.copy).then(function () {
+        btn.classList.add('is-done');
+        label.textContent = 'Copié !';
+        btn.setAttribute('aria-label', 'Adresse copiée');
+        setTimeout(function () {
+          btn.classList.remove('is-done');
+          label.textContent = 'Copier';
+          btn.setAttribute('aria-label', 'Copier l’adresse email');
+        }, 2000);
       });
     });
-    render();
+  });
+
+  // ---- Filtre des projets ----------------------------------------------
+  var filters = document.querySelectorAll('.filter[data-filter]');
+  if (filters.length) {
+    var cards = document.querySelectorAll('#proj-list .proj');
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.dataset.filter;
+        filters.forEach(function (b) {
+          b.classList.toggle('is-on', b === btn);
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
+        var apply = function () {
+          cards.forEach(function (c) { c.hidden = f !== 'all' && c.dataset.cat !== f; });
+        };
+        if (document.startViewTransition && !reduceMotion) document.startViewTransition(apply);
+        else apply();
+      });
+    });
   }
 
   // ---- Révélation au scroll (repli) -------------------------------------

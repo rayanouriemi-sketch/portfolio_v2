@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projets — Rayan Ouriemi</title>
+<meta name="description" content="Projets et réalisations de Rayan Ouriemi : SaaS, sites de marque, dashboards et concepts UX/UI.">
+<meta name="theme-color" content="#09090b">
+<meta property="og:title" content="Projets — Rayan Ouriemi">
+<meta property="og:description" content="Projets et réalisations de Rayan Ouriemi : SaaS, sites de marque, dashboards et concepts UX/UI.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div class="pf" style="min-height: 100vh">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="progress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+<nav class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px" aria-label="Navigation principale">
+<a href="index.html" class="brand" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #f4f4f5">
+<span class="mono logo">R<span class="acc">O</span></span>
+<span style="font-weight: 600; font-size: 15px; letter-spacing: -.01em">Rayan Ouriemi</span>
+</a>
+<div class="nav-links" style="display: flex; align-items: center; gap: 30px">
+<a class="nav-link" href="projets.html" aria-current="page">Projets</a>
+<a class="nav-link" href="a-propos.html">À propos</a>
+<a class="nav-link" href="parcours.html">Parcours</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<a class="btn btn-g nav-cta" href="https://rayanouriemi.fr/cv-rayan-ouriemi.pdf" target="_blank" rel="noopener" style="min-height: 44px; padding: 0 18px; font-size: 14px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Mon CV</a>
+<button type="button" class="burger" aria-expanded="false" aria-controls="mnav" aria-label="Ouvrir le menu">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</nav>
+<div class="mnav" id="mnav" hidden>
+<a href="index.html">Accueil</a>
+<a href="projets.html" aria-current="page">Projets</a>
+<a href="a-propos.html">À propos</a>
+<a href="parcours.html">Parcours</a>
+<a href="contact.html">Contact</a>
+<a href="https://rayanouriemi.fr/cv-rayan-ouriemi.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+</div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+<div class="hero-bg"></div>
+<div class="hero-glow" style="top: -120px"></div>
+<div class="wrap" style="position: relative; display: flex; flex-direction: column; gap: 28px">
+<span class="eyebrow mono in" style="animation-delay: .05s">Portfolio</span>
+<h1 class="page-h1 in" style="animation-delay: .15s">Projets <span class="serif acc">sélectionnés</span>.</h1>
+<p class="lead in" style="margin: 0; max-width: 620px; animation-delay: .28s">Ce que je construis — de l’outil interne en production à la landing page de marque. Chaque projet mérite le même soin.</p>
+<div class="page-stats in" style="animation-delay: .4s"><div><span class="ps-num">20</span><span class="mono ps-lbl">Projets</span></div><div><span class="ps-num">4</span><span class="mono ps-lbl">Catégories</span></div><div><span class="ps-num">25</span><span class="mono ps-lbl">Technos</span></div></div>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 24px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div class="filters" role="group" aria-label="Filtrer les projets">
+<button type="button" class="filter is-on" data-filter="all" aria-pressed="true">Tous <span class="mono">20</span></button>
+<button type="button" class="filter" data-filter="pro" aria-pressed="false">SaaS &amp; outils <span class="mono">2</span></button>
+<button type="button" class="filter" data-filter="marque" aria-pressed="false">Sites de marque <span class="mono">9</span></button>
+<button type="button" class="filter" data-filter="uxui" aria-pressed="false">UX / UI <span class="mono">9</span></button>
+</div>
+<div class="proj-grid proj-grid-3" id="proj-list">
+<article class="card proj rv" data-cat="pro">
+<a class="proj-vis" href="https://hexaconnect.myhexagone.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/hexaconnect.png" alt="" width="1440" height="900" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SAAS</span><span>2025</span></div>
+<h3 class="proj-title">Hexaconnect</h3>
+<p class="proj-desc">Plateforme interne développée pour Hexagone Manufacture : gestion fine des rôles et des permissions, avec une authentification pensée pour protéger les données sensibles de l&#x27;entreprise.</p>
+<div class="tags"><span class="tag mono">Vue.js</span><span class="tag mono">Nuxt</span><span class="tag mono">TypeScript</span><span class="tag mono">Auth</span><span class="tag mono">RBAC</span></div>
+<div class="proj-links"><a class="proj-link" href="https://hexaconnect.myhexagone.com/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="pro">
+<a class="proj-vis" href="https://suivi-esiea.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/suivi-esiea.png" alt="" width="1440" height="900" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">OUTIL PERSO</span><span>2026</span></div>
+<h3 class="proj-title">Suivi ESIEA</h3>
+<p class="proj-desc">Tableau de bord personnel pour suivre l&#x27;avancement de mon cursus ingénieur à l&#x27;ESIEA : matières, sujets et statut de compréhension (vu en cours, en tutorat ou les deux), avec thème clair/sombre.</p>
+<div class="tags"><span class="tag mono">JavaScript</span><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">Vercel</span></div>
+<div class="proj-links"><a class="proj-link" href="https://suivi-esiea.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/suivi-esiea" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://koji-coffee.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/koji-coffee.jpg" alt="" width="800" height="505" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2026</span></div>
+<h3 class="proj-title">Kōji Coffee</h3>
+<p class="proj-desc">Site e-commerce pour un torréfacteur de café de spécialité (marque fictive) : direction artistique audacieuse, typographie XXL et fiches cafés avec notes de dégustation.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">Branding</span><span class="tag mono">E-commerce</span></div>
+<div class="proj-links"><a class="proj-link" href="https://koji-coffee.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/koji-coffee" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://pulse-banking.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/pulse-banking.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2026</span></div>
+<h3 class="proj-title">Pulse</h3>
+<p class="proj-desc">Dashboard de banque en ligne : solde, objectifs d&#x27;épargne, dépenses de la semaine et transactions, pensé pour une lecture en un coup d&#x27;œil en mode sombre.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">UI Design</span></div>
+<div class="proj-links"><a class="proj-link" href="https://pulse-banking.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/pulse-banking" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://maison-brume-seven.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/maison-brume.jpg" alt="" width="800" height="609" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2026</span></div>
+<h3 class="proj-title">Maison Brume</h3>
+<p class="proj-desc">Site vitrine d&#x27;une parfumerie de niche (marque fictive) : univers luxe et épuré, serif élégante, flacon animé et pyramide olfactive.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">Branding</span><span class="tag mono">Animations CSS</span></div>
+<div class="proj-links"><a class="proj-link" href="https://maison-brume-seven.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/maison-brume" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://flowstate-analytics.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/flowstate-analytics.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2026</span></div>
+<h3 class="proj-title">Flowstate</h3>
+<p class="proj-desc">Dashboard analytics SaaS : KPI, courbe de sessions générée en SVG et répartition des sources de trafic, avec une hiérarchie visuelle claire.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">SVG</span><span class="tag mono">Dataviz</span></div>
+<div class="proj-links"><a class="proj-link" href="https://flowstate-analytics.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/flowstate-analytics" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://velora-bikes.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/velora-bikes.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2026</span></div>
+<h3 class="proj-title">Velora</h3>
+<p class="proj-desc">Landing page d&#x27;une marque de vélos électriques (marque fictive) : illustration SVG du vélo et configurateur de couleur en direct.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">SVG</span></div>
+<div class="proj-links"><a class="proj-link" href="https://velora-bikes.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/velora-bikes" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://orbit-tasks-lemon.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/orbit-tasks.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Orbit</h3>
+<p class="proj-desc">Outil de gestion de projet en kanban : glisser-déposer des tâches entre colonnes, étiquettes par type et compteurs mis à jour en temps réel.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">Drag &amp; Drop</span></div>
+<div class="proj-links"><a class="proj-link" href="https://orbit-tasks-lemon.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/orbit-tasks" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://nordlys-skincare.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/nordlys-skincare.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2026</span></div>
+<h3 class="proj-title">Nordlys</h3>
+<p class="proj-desc">Boutique de soins pour la peau (marque fictive) : mise en page en cartes, palette pastel et ajout au panier interactif.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">E-commerce</span></div>
+<div class="proj-links"><a class="proj-link" href="https://nordlys-skincare.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/nordlys-skincare" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://kalm-meditation.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/kalm-meditation.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Kalm</h3>
+<p class="proj-desc">App de méditation guidée : forme organique qui « respire » en CSS, minuteur de séance et cartes de programmes, dans une interface apaisante.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">Animations CSS</span></div>
+<div class="proj-links"><a class="proj-link" href="https://kalm-meditation.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/kalm-meditation" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://ferment-brasserie.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/ferment-brasserie.jpg" alt="" width="800" height="505" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Ferment</h3>
+<p class="proj-desc">Site d&#x27;une brasserie artisanale (marque fictive) : style néo-brutaliste, bandeau défilant et cartes produits aux ombres franches.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">Branding</span><span class="tag mono">Néo-brutalisme</span></div>
+<div class="proj-links"><a class="proj-link" href="https://ferment-brasserie.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/ferment-brasserie" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://nomad-travel-beta.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/nomad-travel.jpg" alt="" width="800" height="505" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Nomad</h3>
+<p class="proj-desc">Planificateur de voyage : hero immersif, barre de recherche en un bloc (destination, dates, voyageurs) et suggestions d&#x27;itinéraires.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">UI Design</span><span class="tag mono">Responsive</span></div>
+<div class="proj-links"><a class="proj-link" href="https://nomad-travel-beta.vercel.app" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a><a class="code-link mono" href="https://github.com/rayanouriemi-sketch/nomad-travel" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/atelier-seve/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/atelier-seve.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Atelier Sève</h3>
+<p class="proj-desc">Boutique d&#x27;une céramiste (marque fictive) : grille éditoriale, pièces dessinées en SVG et survols tout en douceur.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">SVG</span><span class="tag mono">Branding</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/atelier-seve/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/fitlog/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/fitlog.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Fitlog</h3>
+<p class="proj-desc">Dashboard de suivi sportif : anneaux d&#x27;activité, pas de la semaine, fréquence cardiaque et séance du jour à cocher, en bento grid.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">SVG</span><span class="tag mono">Bento</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/fitlog/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/tidal-surf/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/tidal-surf.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Tidal</h3>
+<p class="proj-desc">Site d&#x27;un surf shop basque (marque fictive) : coucher de soleil et vagues animées en SVG, avec un widget de conditions de surf.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">SVG</span><span class="tag mono">Animations CSS</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/tidal-surf/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/mise-recettes/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/mise-recettes.jpg" alt="" width="800" height="609" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Mise</h3>
+<p class="proj-desc">Fiche recette interactive : portions ajustables qui recalculent les quantités et liste d&#x27;ingrédients à cocher pendant la préparation.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">UX</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/mise-recettes/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/lumen-architecture/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/lumen-architecture.jpg" alt="" width="800" height="505" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Lumen Studio</h3>
+<p class="proj-desc">Site d&#x27;un studio d&#x27;architecture (marque fictive) : esthétique minimaliste, grille stricte et index de projets façon portfolio éditorial.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">Minimalisme</span><span class="tag mono">Grille</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/lumen-architecture/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/streak-habits/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/streak-habits.jpg" alt="" width="800" height="600" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Streak</h3>
+<p class="proj-desc">App de suivi d&#x27;habitudes : maquette mobile cochable, heatmap de régularité et statistiques de série, sans culpabiliser les jours ratés.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">Mobile UI</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/streak-habits/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="marque">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/ruche-miel/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/ruche-miel.jpg" alt="" width="800" height="500" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">SITE DE MARQUE · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Ruche &amp; Co</h3>
+<p class="proj-desc">Site d&#x27;une marque de miel artisanal (marque fictive) : motif alvéolé, pot animé et offre de parrainage de ruche.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">Branding</span><span class="tag mono">Illustration</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/ruche-miel/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+
+<article class="card proj rv" data-cat="uxui">
+<a class="proj-vis" href="https://rayanouriemi.fr/demos/atoms-design-system/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/atoms-design-system.jpg" alt="" width="800" height="600" loading="lazy"></a>
+<div class="proj-body">
+<div class="mono proj-meta"><span class="acc">UX/UI · CONCEPT</span><span>2025</span></div>
+<h3 class="proj-title">Atoms</h3>
+<p class="proj-desc">Documentation d&#x27;un design system : variantes de boutons, palette, champs et badges, avec bascule clair/sombre pilotée par des tokens CSS.</p>
+<div class="tags"><span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">Design System</span></div>
+<div class="proj-links"><a class="proj-link" href="https://rayanouriemi.fr/demos/atoms-design-system/" target="_blank" rel="noopener">Voir le site <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></div>
+</div>
+</article>
+</div>
+<p class="mono" style="margin: 0; color: var(--tx3); font-size: 13px">Les projets marqués « concept » sont des marques fictives, conçues pour explorer une direction artistique.</p>
+</div>
+</section>
+
+
+<!-- CTA -->
+<section class="sec" style="padding-top: 0">
+<div class="wrap">
+<div class="cta-band rv">
+<div class="hero-bg" style="opacity: .6"></div>
+<div style="position: relative">
+<span class="eyebrow mono">Une idée, une opportunité&nbsp;?</span>
+<h2 class="cta-h">On construit la suite&nbsp;? <span class="serif acc" style="font-weight: 400">Parlons-en.</span></h2>
+</div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 14px">
+<a class="btn btn-p" href="contact.html">Me contacter <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-g" href="https://rayanouriemi.fr/cv-rayan-ouriemi.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+<div class="wrap">
+<div class="foot-grid">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 340px">
+<span class="foot-name">RAYAN OURIEMI<span class="acc">.</span></span>
+<p style="margin: 0; color: var(--tx2); font-size: 15px; line-height: 1.6">Développeur full-stack, apprenti ingénieur chez Snic Technologies et à l’ESIEA. Je construis des expériences web modernes et mémorables.</p>
+</div>
+<div>
+<span class="mono foot-h">Navigation</span>
+<ul class="foot-list">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="projets.html">Projets</a></li>
+<li><a href="a-propos.html">À propos</a></li>
+<li><a href="parcours.html">Parcours</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<span class="mono foot-h">Ailleurs</span>
+<ul class="foot-list">
+<li><a href="mailto:rayanouriemi@gmail.com">Email</a></li>
+<li><a href="https://www.linkedin.com/in/rayan-ouriemi-b55a94277/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+<li><a href="https://github.com/rayanouriemi-sketch" target="_blank" rel="noopener">GitHub ↗</a></li>
+<li><a href="https://rayanouriemi.fr/cv-rayan-ouriemi.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a></li>
+</ul>
+</div>
+<div>
+<span class="mono foot-h">Actuellement</span>
+<p style="margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: var(--tx2); line-height: 1.5"><span style="display: inline-flex; align-items: center; gap: 8px; color: var(--tx)"><span class="dot-live" style="width: 6px; height: 6px"></span>@ Snic Technologies · ESIEA</span><span>Apprenti ingénieur · Alternance</span><span>Argenteuil, Île-de-France</span></p>
+</div>
+</div>
+<div class="mono foot-bottom">
+<span>© 2026 Rayan Ouriemi — conçu &amp; codé avec soin.</span>
+<span class="foot-legal"><a href="cgu.html">Mentions légales &amp; CGU</a><a href="confidentialite.html">Confidentialité</a><a href="#main">Retour en haut ↑</a></span>
+</div>
+</div>
+</footer>
+</div>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

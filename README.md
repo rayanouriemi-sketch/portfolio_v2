@@ -6,18 +6,23 @@ Site statique : HTML, CSS et un peu de JavaScript, sans framework ni étape de b
 ## Structure
 
 ```
-index.html              page d’accueil (hero, à propos, projets, compétences, parcours, contact)
-projets/                une page d’étude de cas par projet
-  campus-flow.html
-  sentinelle-air.html
-  hashline.html
-  orbit-logic.html
+index.html              accueil (hero, chapitre actuel, projets phares, aperçu du parcours)
+projets.html            les 20 projets, filtrables par catégorie
+a-propos.html           bio, stack (carte mère interactive), approche
+parcours.html           chronologie, boîte à outils, principes
+contact.html            email, liens, FAQ
 assets/
-  css/main.css          styles de la page d’accueil
-  css/projet.css        styles des pages projets
-  js/main.js            menu mobile, carte des compétences, démo des portes logiques, animations
+  css/main.css          styles (communs à toutes les pages)
+  js/main.js            menu mobile, fiche technique, copie de l’email, filtre des projets
+  projects/             captures des projets
   favicon.svg
 ```
+
+La nav, le bandeau d’appel à l’action et le pied de page sont dupliqués dans chaque page :
+une modification doit être reportée sur les cinq fichiers.
+
+Le contenu (parcours, projets, textes) reprend celui de [rayanouriemi.fr](https://rayanouriemi.fr).
+Le CV est servi depuis `https://rayanouriemi.fr/cv-rayan-ouriemi.pdf`.
 
 ## Voir le site en local
 
@@ -28,14 +33,14 @@ python3 -m http.server 8000
 # puis http://localhost:8000
 ```
 
-## Mise en ligne (GitHub Pages)
+## Mise en ligne (Vercel)
 
-Settings → Pages → Source : **Deploy from a branch** → `main` / `(root)` → Save.
-Le site est ensuite servi à `https://rayanouriemi-sketch.github.io/portfolio_v2/`.
+Importer le dépôt sur [vercel.com/new](https://vercel.com/new), preset **Other**, sans commande de build ni dossier de sortie.
+Ou en ligne de commande : `npx vercel` puis `npx vercel --prod`.
+
+L’hébergeur est cité dans `cgu.html` et `confidentialite.html` : à mettre à jour en cas de changement.
 
 ## À personnaliser
 
-- Projets, chiffres et parcours : contenus d’exemple, à remplacer par les vrais.
-- Email : `mailto:contact@exemple.fr` dans `index.html`.
-- LinkedIn : lien vers ton profil dans `index.html`.
-- Couleur d’accent : variable `--acc` dans `assets/css/main.css` et `assets/css/projet.css`.
+- Couleur d’accent : variable `--acc` dans `assets/css/main.css`.
+- Niveaux de la stack : objet `SKILLS` dans `assets/js/main.js`.
