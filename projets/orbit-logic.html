@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit Logic — Rayan Ouriemi</title>
+<meta name="description" content="Étude de cas : Orbit Logic, simulateur de circuits logiques en Java.">
+<meta name="theme-color" content="#09090b">
+<meta property="og:title" content="Orbit Logic — Rayan Ouriemi">
+<meta property="og:description" content="Étude de cas : Orbit Logic, simulateur de circuits logiques en Java.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/projet.css">
+</head>
+<body>
+<div class="pf">
+<header class="nav">
+<nav class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px" aria-label="Navigation du projet">
+<a class="back" href="../index.html#projets"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Tous les projets</a>
+<span class="mono" style="font-size: 12.5px; color: #8b8b94">PROJET <span class="acc">04</span> / 04</span>
+</nav>
+</header>
+
+<section style="padding: 96px 0 72px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<span class="eyebrow mono in" style="animation-delay: .05s">Logiciel · 2024</span>
+<h1 class="h1 in" style="animation-delay: .15s">Orbit Logic<span class="acc">.</span></h1>
+<p class="in" style="margin: 0; max-width: 760px; font-size: clamp(22px,2.6vw,32px); line-height: 1.3; letter-spacing: -.02em; animation-delay: .28s">Un simulateur de circuits qu’on a <span class="serif acc">envie</span> d’ouvrir.</p>
+<div class="meta in" style="animation-delay: .4s">
+<div><span class="meta-k mono">RÔLE</span><span class="meta-v">Architecture &amp; moteur</span></div>
+<div><span class="meta-k mono">DURÉE</span><span class="meta-v">4 mois</span></div>
+<div><span class="meta-k mono">ÉQUIPE</span><span class="meta-v">4 étudiants</span></div>
+<div><span class="meta-k mono">STACK</span><span class="meta-v">Java · JavaFX · JUnit</span></div>
+</div>
+</div>
+</section>
+
+<div class="wrap in" style="animation-delay: .5s">
+<div class="vis">
+<div class="grid-bg"></div>
+<svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<g fill="none" stroke="#3a3a41" stroke-width="2">
+<path d="M40 80 H110"></path><path d="M40 110 H110"></path>
+<path d="M40 160 H110"></path><path d="M40 190 H110"></path>
+<path d="M160 95 H200 V125 H230"></path>
+<path d="M160 175 H200 V145 H230"></path>
+</g>
+<path class="dash" d="M280 135 H360" fill="none" stroke="#ff5b1f" stroke-width="2" style="stroke: var(--acc)"></path>
+<g fill="#141418" stroke="#52525b" stroke-width="2">
+<path d="M110 70 H135 A25 25 0 0 1 135 120 H110 Z"></path>
+<path d="M110 150 H135 A25 25 0 0 1 135 200 H110 Z"></path>
+</g>
+<path d="M230 110 Q250 110 262 122 Q272 135 262 148 Q250 160 230 160 Q244 135 230 110 Z" fill="#141418" stroke="#ff5b1f" stroke-width="2" style="stroke: var(--acc)"></path>
+<g fill="#ff5b1f" style="fill: var(--acc)"><circle cx="40" cy="80" r="4"></circle><circle cx="40" cy="190" r="4"></circle><circle cx="364" cy="135" r="6"></circle></g>
+<g fill="#52525b"><circle cx="40" cy="110" r="4"></circle><circle cx="40" cy="160" r="4"></circle></g>
+<g style="font: 500 10px 'Geist Mono', monospace" fill="#8b8b94"><text x="18" y="84">1</text><text x="18" y="114">0</text><text x="18" y="164">0</text><text x="18" y="194">1</text><text x="350" y="114" fill="#f4f4f5">OUT</text></g>
+<g stroke="#26262b" stroke-width="1.5" fill="none"><path d="M40 222 H70 V212 H110 V222 H150 V212 H190 V222 H230 V212 H270 V222 H310 V212 H360"></path></g>
+</svg>
+</div>
+</div>
+
+<section class="sec">
+<div class="wrap two">
+<div class="rv"><span class="eyebrow mono">Contexte</span><h2 class="h2">Apprendre la logique en la <span class="serif acc">manipulant</span>.</h2></div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 20px">
+<p class="lead" style="margin: 0">Les simulateurs utilisés en cours étaient lourds, datés et peu intuitifs. Notre projet de génie logiciel : en concevoir un nouveau, pensé pour des étudiants qui découvrent l’électronique numérique.</p>
+<p class="lead" style="margin: 0">J’ai pris en charge l’architecture et le moteur de simulation, le cœur du projet, en le gardant totalement indépendant de l’interface graphique.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div class="rv"><span class="eyebrow mono">Essayez</span><h2 class="h2">Basculez les entrées.</h2></div>
+<div class="lab rv">
+<div class="lab-in">
+<span class="mono" style="font-size: 11.5px; color: #8b8b94">ENTRÉES</span>
+<button type="button" class="sw sw-on" data-input="a" aria-pressed="true"><span class="mono" style="font-size: 18px">A = <span class="acc" data-val>1</span></span><span class="sw-track"><span class="sw-knob"></span></span></button>
+<button type="button" class="sw" data-input="b" aria-pressed="false"><span class="mono" style="font-size: 18px">B = <span class="acc" data-val>0</span></span><span class="sw-track"><span class="sw-knob"></span></span></button>
+<p style="margin: 4px 0 0; font-size: 14px; color: #a1a1aa; line-height: 1.6">Le même moteur que dans Orbit Logic, réduit à trois portes.</p>
+</div>
+<div class="lab-out" aria-live="polite">
+<div class="gate" data-gate="and">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="mono" style="font-size: 12px; color: #8b8b94">A · B</span><span class="led"></span></div>
+<div><div style="font-size: 32px; font-weight: 600; letter-spacing: -.03em">ET</div><div class="mono" style="margin-top: 6px; font-size: 15px; color: #a1a1aa">sortie = <span class="acc" data-out>0</span></div></div>
+</div>
+<div class="gate gate-on" data-gate="or">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="mono" style="font-size: 12px; color: #8b8b94">A + B</span><span class="led"></span></div>
+<div><div style="font-size: 32px; font-weight: 600; letter-spacing: -.03em">OU</div><div class="mono" style="margin-top: 6px; font-size: 15px; color: #a1a1aa">sortie = <span class="acc" data-out>1</span></div></div>
+</div>
+<div class="gate gate-on" data-gate="xor">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="mono" style="font-size: 12px; color: #8b8b94">A ⊕ B</span><span class="led"></span></div>
+<div><div style="font-size: 32px; font-weight: 600; letter-spacing: -.03em">OU-X</div><div class="mono" style="margin-top: 6px; font-size: 15px; color: #a1a1aa">sortie = <span class="acc" data-out>1</span></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div class="rv"><span class="eyebrow mono">Architecture</span><h2 class="h2">Un moteur, plusieurs vues.</h2></div>
+<div class="arch rv">
+<div class="anode"><span class="mono" style="font-size: 11px; color: #8b8b94">VUE</span><strong style="font-size: 18px; font-weight: 600">JavaFX</strong><span style="font-size: 14px; color: #a1a1aa">Canevas, glisser-déposer</span></div>
+<div class="alink"></div>
+<div class="anode"><span class="mono" style="font-size: 11px; color: #8b8b94">CONTRÔLEUR</span><strong style="font-size: 18px; font-weight: 600">Commandes</strong><span style="font-size: 14px; color: #a1a1aa">Annuler / rétablir</span></div>
+<div class="alink"></div>
+<div class="anode anode-acc"><span class="mono acc" style="font-size: 11px">MOTEUR</span><strong style="font-size: 18px; font-weight: 600">Simulation événementielle</strong><span style="font-size: 14px; color: #a1a1aa">File de priorité, délais de propagation</span></div>
+<div class="alink"></div>
+<div class="anode"><span class="mono" style="font-size: 11px; color: #8b8b94">SORTIE</span><strong style="font-size: 18px; font-weight: 600">Chronogrammes</strong><span style="font-size: 14px; color: #a1a1aa">Export et sauvegarde JSON</span></div>
+</div>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<div class="rv"><span class="eyebrow mono">Défis &amp; solutions</span><h2 class="h2">Les problèmes intéressants.</h2></div>
+<div>
+<div class="row rv"><div><span class="mono" style="font-size: 11.5px; color: #8b8b94">DÉFI</span><p style="margin: 8px 0 0; font-size: 19px; line-height: 1.45">Un circuit bouclé sur lui-même peut osciller à l’infini.</p></div><div class="row-arr" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></div><div><span class="mono acc" style="font-size: 11.5px">SOLUTION</span><p style="margin: 8px 0 0; color: #a1a1aa; line-height: 1.65">Détection des cycles combinatoires et signalement visuel de l’oscillation, au lieu de figer l’application.</p></div></div>
+<div class="row rv"><div><span class="mono" style="font-size: 11.5px; color: #8b8b94">DÉFI</span><p style="margin: 8px 0 0; font-size: 19px; line-height: 1.45">Les grands circuits devenaient lents.</p></div><div class="row-arr" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></div><div><span class="mono acc" style="font-size: 11.5px">SOLUTION</span><p style="margin: 8px 0 0; color: #a1a1aa; line-height: 1.65">Simulation événementielle : seules les portes dont une entrée change sont recalculées.</p></div></div>
+<div class="row rv"><div><span class="mono" style="font-size: 11.5px; color: #8b8b94">DÉFI</span><p style="margin: 8px 0 0; font-size: 19px; line-height: 1.45">Quatre personnes modifient le même code en parallèle.</p></div><div class="row-arr" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></div><div><span class="mono acc" style="font-size: 11.5px">SOLUTION</span><p style="margin: 8px 0 0; color: #a1a1aa; line-height: 1.65">Moteur découplé de l’interface, couvert par des tests JUnit, et intégration continue sur chaque pull request.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 0">
+<div class="wrap two">
+<div class="rv"><span class="eyebrow mono">Ce que j’en retiens</span><h2 class="h2">L’architecture, c’est du <span class="serif acc">temps</span> gagné.</h2></div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 24px">
+<p class="lead" style="margin: 0">Séparer le moteur de l’interface semblait coûteux au départ. C’est pourtant ce qui nous a permis de tester sereinement, de travailler à quatre sans nous marcher dessus et d’ajouter les chronogrammes en fin de projet sans rien casser.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag mono">Java</span><span class="tag mono">JavaFX</span><span class="tag mono">JUnit</span><span class="tag mono">Maven</span><span class="tag mono">Git</span></div>
+</div>
+</div>
+</section>
+
+<div class="wrap" style="padding-bottom: 48px">
+<a class="next rv" href="campus-flow.html">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="mono" style="font-size: 12.5px; color: #8b8b94">RETOUR AU DÉBUT · 01</span><span style="font-size: clamp(40px,6vw,80px); line-height: .95; letter-spacing: -.045em; font-weight: 600">Campus Flow</span><span style="color: #a1a1aa">Application web</span></div>
+<span class="next-arr"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+<footer class="mono" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 40px; font-size: 12.5px; color: #8b8b94"><span>© 2026 Rayan Ouriemi</span><a href="../index.html" style="color: #a1a1aa; text-decoration: none">Retour au portfolio</a></footer>
+</div>
+</div>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
