@@ -87,13 +87,16 @@ if (webgl && !navigator.connection?.saveData) {
   const visual = document.querySelector('.hero .visual');
   if (visual) import('./hero3d.js').then(m => m.default(visual, reduce)).catch(e => console.warn("[fx]", e));
 
-  const board = document.querySelector('.board');
-  if (board) {
+  const lazy = (el, load) => {
     const io = new IntersectionObserver(([e]) => {
       if (!e.isIntersecting) return;
       io.disconnect();
-      import('./board3d.js').then(m => m.default(board, reduce)).catch(e => console.warn("[fx]", e));
+      load().then(m => m.default(el, reduce)).catch(e => console.warn('[fx]', e));
     }, { rootMargin: '400px 0px' });
-    io.observe(board);
-  }
+    io.observe(el);
+  };
+  const board = document.querySelector('.board');
+  if (board) lazy(board, () => import('./board3d.js'));
+  const footScene = document.querySelector('.foot-scene');
+  if (footScene) lazy(footScene, () => import('./footer3d.js'));
 }
