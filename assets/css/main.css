@@ -369,3 +369,19 @@ a.info-v:hover{color:var(--acc)}
 .board-3d .chip-name{margin:0;font-size:14px;font-weight:500}
 .board-3d .chip:hover{transform:none}
 @media (max-width: 640px){.board-canvas{aspect-ratio:4/5}.board-3d .chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* terminal projets */
+.term{overflow:hidden;background:#0b0b0e;cursor:text}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:12px;color:var(--tx3)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#3a3a41}
+.term-bar i:first-child{background:var(--acc)}
+.term-bar span{margin-left:8px}
+.term-out{height:360px;overflow-y:auto;padding:16px 20px 0;font-size:13.5px;line-height:1.65;color:var(--tx2);white-space:pre-wrap;word-break:break-word}
+.term-out .t-cmd{color:var(--tx)}
+.term-out .t-dir{color:var(--acc)}
+.term-out .t-err{color:#f87171}
+.term-line{display:flex;gap:8px;padding:4px 20px 18px;font-size:13.5px;color:var(--tx2)}
+.term-ps{white-space:nowrap}
+.term-in{flex:1;min-width:0;background:none;border:0;outline:0;padding:0;font:inherit;color:var(--tx);caret-color:var(--acc)}
+.pf .term-in:focus-visible{outline:0}
+@media (max-width: 640px){.term-out{height:300px;font-size:12.5px;padding:14px 14px 0}.term-line{font-size:12.5px;padding:4px 14px 14px}}

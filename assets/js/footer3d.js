@@ -93,11 +93,13 @@ void main() {
   TENT = vec2(A * .44, field(A * .44) - .035);
   TREE = vec2(A * .6, field(A * .6) - .005);
   vec2 par = uPtr * .012;
+  float px = 1.5 / uRes.y; // largeur d'un pixel : bords lissés au lieu de step() crénelé
 
   vec3 col = sky(p + par * .3);
   float fh = farHill(p.x + par.x * .6);
-  col = mix(col, mix(vec3(.05, .036, .05), col, .35), step(p.y, fh));
-  col = mix(col, vec3(.032, .026, .034), step(p.y, nearHill(p.x + par.x * .8)));
+  col = mix(col, mix(vec3(.05, .036, .05), col, .35), smoothstep(fh + px, fh - px, p.y));
+  float nh = nearHill(p.x + par.x * .8);
+  col = mix(col, vec3(.032, .026, .034), smoothstep(nh + px, nh - px, p.y));
 
   float fy = field(p.x);
   if (p.y < fy + .012) {
@@ -132,7 +134,7 @@ export default function footer3d(scene, reduce) {
   const canvas = document.createElement('canvas');
   let renderer;
   try { renderer = createRenderer(canvas, '#060608'); } catch { return; }
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.25));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 
   const u = { uRes: { value: new THREE.Vector2(1, 1) }, uTime: { value: 0 }, uPtr: { value: new THREE.Vector2() } };
   const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({

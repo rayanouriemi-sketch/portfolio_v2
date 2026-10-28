@@ -103,6 +103,186 @@
     });
   }
 
+  // ---- Terminal des projets ---------------------------------------------
+  // Arborescence ~/<catégorie>/<projet>/README.md construite depuis les cartes de la page.
+  var term = document.getElementById('term');
+  if (term) {
+    var GITHUB = 'https://github.com/rayanouriemi-sketch';
+    var DIRS = { pro: 'saas', marque: 'marques', uxui: 'ux-ui' };
+    var out = document.getElementById('term-out');
+    var input = document.getElementById('term-in');
+    var cwdEl = document.getElementById('term-cwd');
+    var slug = function (s) {
+      return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    };
+    var fs = {};
+    Object.keys(DIRS).forEach(function (k) { fs[DIRS[k]] = {}; });
+    document.querySelectorAll('#proj-list .proj').forEach(function (card) {
+      var q = function (sel) { return card.querySelector(sel); };
+      var title = q('.proj-title').textContent;
+      fs[DIRS[card.dataset.cat]][slug(title)] = {
+        title: title,
+        meta: q('.proj-meta').textContent.replace(/(\D)(\d{4})$/, '$1 · $2'),
+        desc: q('.proj-desc').textContent,
+        tags: Array.prototype.map.call(card.querySelectorAll('.tag'), function (t) { return t.textContent; }).join(', '),
+        site: q('.proj-link') && q('.proj-link').href,
+        git: q('.code-link') && q('.code-link').href
+      };
+    });
+
+    var cwd = [];
+    var history = [];
+    var hIdx = 0;
+
+    var line = function (parts, cls) {
+      var div = document.createElement('div');
+      if (cls) div.className = cls;
+      [].concat(parts).forEach(function (p) {
+        if (typeof p === 'string') { div.appendChild(document.createTextNode(p)); return; }
+        var el = document.createElement(p.href ? 'a' : 'span');
+        el.textContent = p.text;
+        if (p.cls) el.className = p.cls;
+        if (p.href) { el.href = p.href; el.target = '_blank'; el.rel = 'noopener'; }
+        div.appendChild(el);
+      });
+      out.appendChild(div);
+    };
+    var link = function (href) { return { text: href.replace(/^https?:\/\//, '').replace(/\/$/, '') + ' ↗', href: href }; };
+
+    // Résout un chemin en tableau de segments, ou null s'il n'existe pas.
+    var resolve = function (path) {
+      var segs = !path ? cwd.slice() : /^[~/]/.test(path) ? [] : cwd.slice();
+      (path || '').split('/').forEach(function (s) {
+        if (!segs || !s || s === '.' || s === '~') return;
+        if (s === '..') segs.pop();
+        else segs.push(s);
+      });
+      if (segs.length > 3 || (segs.length === 3 && segs[2] !== 'README.md')) return null;
+      if (segs[0] && !fs[segs[0]]) return null;
+      if (segs[1] && !fs[segs[0]][segs[1]]) return null;
+      return segs;
+    };
+    var node = function (segs) { return segs.length >= 2 ? fs[segs[0]][segs[1]] : null; };
+    // Projet par chemin, ou par nom seul depuis n'importe quel dossier.
+    var find = function (path) {
+      var segs = resolve(path);
+      if (segs) return node(segs);
+      var name = (path || '').replace(/\/(README\.md)?$/, '');
+      for (var d in fs) if (fs[d][name]) return fs[d][name];
+      return null;
+    };
+    var pwd = function () { return '~' + cwd.map(function (s) { return '/' + s; }).join(''); };
+    var isFile = function (segs) { return segs.length === 3; };
+
+    var readme = function (p) {
+      line({ text: '# ' + p.title, cls: 't-cmd' });
+      line(p.meta);
+      line(p.desc);
+      line('stack : ' + p.tags);
+      if (p.site) line(['site  : ', link(p.site)]);
+      line(['git   : ', link(p.git || GITHUB)]);
+    };
+
+    var CMDS = {
+      help: function () {
+        line([
+          'ls [chemin]        lister un dossier\n',
+          'cd <chemin>        changer de dossier (.., ~)\n',
+          'pwd                dossier courant\n',
+          'tree               toute l’arborescence\n',
+          'cat <projet>       fiche du projet (README.md)\n',
+          'open <projet>      ouvrir le site\n',
+          'git                lien du dépôt\n',
+          'whoami · clear · help'
+        ].join(''));
+      },
+      pwd: function () { line('/home/rayan' + pwd().slice(1)); },
+      whoami: function () { line('rayan — développeur web, élève ingénieur à l’ESIEA'); },
+      clear: function () { out.textContent = ''; },
+      ls: function (a) {
+        var segs = resolve(a[0]);
+        if (!segs) return line('ls: ' + a[0] + ': aucun fichier ou dossier', 't-err');
+        if (isFile(segs)) return line('README.md');
+        var items = segs.length ? (segs.length === 1 ? Object.keys(fs[segs[0]]) : null) : Object.keys(fs);
+        if (!items) return line('README.md');
+        line(items.map(function (k, i) { return { text: k + '/' + (i < items.length - 1 ? '  ' : ''), cls: 't-dir' }; }));
+      },
+      cd: function (a) {
+        var segs = resolve(a[0] || '~');
+        if (!segs || isFile(segs)) return line('cd: ' + a[0] + ': aucun dossier de ce type', 't-err');
+        cwd = segs;
+        cwdEl.textContent = pwd();
+      },
+      tree: function () {
+        var keys = Object.keys(fs);
+        line('~');
+        keys.forEach(function (d, i) {
+          var last = i === keys.length - 1;
+          line([last ? '└── ' : '├── ', { text: d + '/', cls: 't-dir' }]);
+          var ps = Object.keys(fs[d]);
+          ps.forEach(function (p, j) { line((last ? '    ' : '│   ') + (j === ps.length - 1 ? '└── ' : '├── ') + p); });
+        });
+        line(['\n', link(GITHUB)]);
+      },
+      cat: function (a) {
+        var p = find(a[0]);
+        if (!p) return line('cat: ' + (a[0] || '') + ': aucun projet de ce nom (essayez ls)', 't-err');
+        readme(p);
+      },
+      open: function (a) {
+        var p = find(a[0]);
+        if (!p || !p.site) return line('open: ' + (a[0] || '.') + ': aucun site à ouvrir', 't-err');
+        window.open(p.site, '_blank', 'noopener');
+        line(['ouverture de ', link(p.site)]);
+      },
+      git: function () {
+        var p = node(cwd);
+        line(['origin  ', link((p && p.git) || GITHUB)]);
+      }
+    };
+
+    var run = function (raw) {
+      var a = raw.trim().split(/\s+/);
+      var cmd = a.shift();
+      line([{ text: 'rayan@portfolio', cls: 'acc' }, ':' + pwd() + '$ ', { text: raw, cls: 't-cmd' }]);
+      if (!cmd) return;
+      if (CMDS[cmd]) CMDS[cmd](a);
+      else line(cmd + ': commande introuvable — tapez help', 't-err');
+    };
+
+    // Complétion Tab sur le dernier segment du chemin.
+    var complete = function () {
+      var m = input.value.match(/^(\S+\s+)(.*)$/);
+      if (!m) return;
+      var arg = m[2];
+      var cut = arg.lastIndexOf('/') + 1;
+      var base = resolve(arg.slice(0, cut) || '.');
+      if (!base || isFile(base)) return;
+      var pool = base.length === 2 ? ['README.md'] : Object.keys(base.length ? fs[base[0]] : fs);
+      var hits = pool.filter(function (k) { return k.indexOf(arg.slice(cut)) === 0; });
+      if (hits.length === 1) input.value = m[1] + arg.slice(0, cut) + hits[0] + (hits[0] === 'README.md' ? '' : '/');
+      else if (hits.length > 1) line(hits.join('  '));
+    };
+
+    document.getElementById('term-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value.trim()) history.push(input.value);
+      hIdx = history.length;
+      run(input.value);
+      input.value = '';
+      out.scrollTop = out.scrollHeight;
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Tab') { e.preventDefault(); complete(); out.scrollTop = out.scrollHeight; }
+      else if (e.key === 'ArrowUp' && hIdx > 0) { e.preventDefault(); input.value = history[--hIdx]; }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); hIdx = Math.min(hIdx + 1, history.length); input.value = history[hIdx] || ''; }
+    });
+    term.addEventListener('click', function (e) { if (!e.target.closest('a') && !getSelection().toString()) input.focus(); });
+
+    line('Bienvenue. Tapez help pour la liste des commandes, ou essayez : ls, cd saas, cat hexaconnect');
+    run('ls');
+  }
+
   // ---- Révélation au scroll (repli) -------------------------------------
   var hasScrollTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
   if (!hasScrollTimeline && !reduceMotion && 'IntersectionObserver' in window) {
